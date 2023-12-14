@@ -97,3 +97,51 @@ const youWin = () => {
   messagePar.style.backgroundColor = GREEN;
   yourScoreSpan.textContent++;
 };
+
+//? modal aç
+const openModal = () => {
+  modalCardSection.classList.add("show");
+
+  if (yourScoreSpan.textContent === "10") {
+    //? eger kullanici 10 puana usalti ise kullanici kazanmistir.
+    finalMessagePar.textContent = "💃 You Win🕺";
+    document.querySelector(".modal").style.backgroundColor = GREEN;
+    playAgainBtn.style.color = GREEN;
+  } else {
+    //? eger pc 10 puana ulasti ise pc kazanmistir.
+    finalMessagePar.textContent = "☹️ You Lost ☹️";
+    document.querySelector(".modal").style.backgroundColor = RED;
+    playAgainBtn.style.color = RED;
+  }
+};
+
+//! Local Storage'a veri yazma ve okuma
+localStorage.setItem("highScore", 5); //? veri yazma
+console.log(localStorage.getItem("highScore")); //? veri okuma
+
+//! İlkel Yontem
+//? Resimler
+// const rockImg = document.getElementById("rock")
+// const paperImg = document.getElementById("paper")
+// const scissorImg = document.getElementById("scissor")
+
+// rockImg.addEventListener("click", () => {
+//   image.src = "./assets/rock.png"
+//   image.alt = "rock"
+//   yourChoiceDiv.appendChild(image)
+
+//   //? innerHTML
+//   // yourChoiceDiv.innerHTML = `<img src="./assets/rock.png" alt="rock">`
+// })
+
+// paperImg.addEventListener("click", () => {
+//   image.src = "./assets/paper.png"
+//   image.alt = "paper"
+//   yourChoiceDiv.appendChild(image)
+// })
+
+// scissorImg.addEventListener("click", () => {
+//   image.src = "./assets/scissor.png"
+//   image.alt = "scissor"
+//   yourChoiceDiv.appendChild(image)
+// })
